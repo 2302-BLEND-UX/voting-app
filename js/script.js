@@ -14,17 +14,16 @@ function toggleModal() {
 
 function submit() {
 
-    // validation
-    if (ageInput.value === '' || donationInput.value === '') {
-        errorMessage.innerHTML = `Please enter both age and a donation (you can add $0)`;
-        return;
-    }
-
     const age = ageInput.value;
     const donation = donationInput.value;
 
+    // validation
+    if (ageInput.value === '' || donationInput.value === '') {
+        errorMessage.innerHTML = `Please enter both age and a donation (you can add $0)`;
+
+    }
     // first check if age is greater or equal to 18
-    if (age >= 18) {
+    else if (age >= 18) {
         modalContent.innerHTML = `<p>Congrats - you're old enough to vote!</p>
         <p>You donated $${donationInput.value}.</p>
         `;
